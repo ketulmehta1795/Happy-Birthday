@@ -1,1 +1,977 @@
-<h1>HelloWorld</h1>
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+body {
+  background-color: #99ccff;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+p {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
+}
+
+ .cake {
+	 position: absolute;
+	 width: 250px;
+	 height: 200px;
+	 top: 50%;
+	 left: 50%;
+	 margin-top: -70px;
+	 margin-left: -125px;
+}
+ .plate {
+	 width: 270px;
+	 height: 110px;
+	 position: absolute;
+	 bottom: -10px;
+	 left: -10px;
+	 background-color: #ccc;
+	 border-radius: 50%;
+	 box-shadow: 0 2px 0 #b3b3b3, 0 4px 0 #b3b3b3, 0 5px 40px rgba(0, 0, 0, 0.5);
+}
+ .cake > * {
+	 position: absolute;
+}
+ .layer {
+	 position: absolute;
+	 display: block;
+	 width: 250px;
+	 height: 100px;
+	 border-radius: 50%;
+	 background-color: #553c13;
+	 box-shadow: 0 2px 0px #6a4b18, 0 4px 0px #33240b, 0 6px 0px #32230b, 0 8px 0px #31230b, 0 10px 0px #30220b, 0 12px 0px #2f220b, 0 14px 0px #2f210a, 0 16px 0px #2e200a, 0 18px 0px #2d200a, 0 20px 0px #2c1f0a, 0 22px 0px #2b1f0a, 0 24px 0px #2a1e09, 0 26px 0px #2a1d09, 0 28px 0px #291d09, 0 30px 0px #281c09;
+}
+ .layer-top {
+	 top: 0px;
+}
+ .layer-middle {
+	 top: 33px;
+}
+ .layer-bottom {
+	 top: 66px;
+}
+ .icing {
+	 top: 2px;
+	 left: 5px;
+	 background-color: #f0e4d0;
+	 width: 240px;
+	 height: 90px;
+	 border-radius: 50%;
+}
+ .icing:before {
+	 content: "";
+	 position: absolute;
+	 top: 4px;
+	 right: 5px;
+	 bottom: 6px;
+	 left: 5px;
+	 background-color: #f4ebdc;
+	 box-shadow: 0 0 4px #f6efe3, 0 0 4px #f6efe3, 0 0 4px #f6efe3;
+	 border-radius: 50%;
+	 z-index: 1;
+}
+ .drip {
+	 display: block;
+	 width: 50px;
+	 height: 60px;
+	 border-bottom-left-radius: 25px;
+	 border-bottom-right-radius: 25px;
+	 background-color: #f0e4d0;
+}
+ .drip1 {
+	 top: 53px;
+	 left: 5px;
+	 transform: skewY(15deg);
+	 height: 48px;
+	 width: 40px;
+}
+ .drip2 {
+	 top: 69px;
+	 left: 181px;
+	 transform: skewY(-15deg);
+}
+ .drip3 {
+	 top: 54px;
+	 left: 90px;
+	 width: 80px;
+	 border-bottom-left-radius: 40px;
+	 border-bottom-right-radius: 40px;
+}
+ .candle {
+	 background-color: #7b020b;
+	 width: 16px;
+	 height: 50px;
+	 border-radius: 8px / 4px;
+	 top: -20px;
+	 left: 50%;
+	 margin-left: -8px;
+	 z-index: 10;
+}
+ .candle:before {
+	 content: "";
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 width: 16px;
+	 height: 8px;
+	 border-radius: 50%;
+	 background-color: #ad030f;
+}
+ .flame {
+	 position: absolute;
+	 background-color: orange;
+	 width: 15px;
+	 height: 35px;
+	 border-radius: 10px 10px 10px 10px / 25px 25px 10px 10px;
+	 top: -34px;
+	 left: 50%;
+	 margin-left: -7.5px;
+	 z-index: 10;
+	 box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.5), 0 0 80px rgba(255, 165, 0, 0.5);
+	 transform-origin: 50% 90%;
+	 animation: flicker 1s ease-in-out alternate infinite;
+}
+ @keyframes flicker {
+	 0% {
+		 transform: skewX(5deg);
+		 box-shadow: 0 0 10px rgba(255, 165, 0, 0.2), 0 0 20px rgba(255, 165, 0, 0.2), 0 0 60px rgba(255, 165, 0, 0.2), 0 0 80px rgba(255, 165, 0, 0.2);
+	}
+	 25% {
+		 transform: skewX(-5deg);
+		 box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.5), 0 0 80px rgba(255, 165, 0, 0.5);
+	}
+	 50% {
+		 transform: skewX(10deg);
+		 box-shadow: 0 0 10px rgba(255, 165, 0, 0.3), 0 0 20px rgba(255, 165, 0, 0.3), 0 0 60px rgba(255, 165, 0, 0.3), 0 0 80px rgba(255, 165, 0, 0.3);
+	}
+	 75% {
+		 transform: skewX(-10deg);
+		 box-shadow: 0 0 10px rgba(255, 165, 0, 0.4), 0 0 20px rgba(255, 165, 0, 0.4), 0 0 60px rgba(255, 165, 0, 0.4), 0 0 80px rgba(255, 165, 0, 0.4);
+	}
+	 100% {
+		 transform: skewX(5deg);
+		 box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.5), 0 0 80px rgba(255, 165, 0, 0.5);
+	}
+}
+
+.balloon {
+  display:inline-block;
+  width:120px;
+  height:145px;
+  background:hsl(215,50%,65%);
+  border-radius:80%;
+  position:relative;
+  box-shadow:inset -10px -10px 0 rgba(0,0,0,0.07);
+  margin:20px 30px;
+  transition:transform 0.5s ease;
+  z-index:10;
+  animation:balloons 4s ease-in-out infinite;
+  transform-origin:bottom center;
+}
+
+@keyframes balloons {
+  0%,100%{ transform:translateY(0) rotate(-4deg); }
+  50%{ transform:translateY(-25px) rotate(4deg); }
+}
+
+
+.balloon:before {
+  content:"▲";
+  font-size:20px;
+  color:hsl(215,30%,50%);
+  display:block;
+  text-align:center;
+  width:100%;
+  position:absolute;
+  bottom:-12px;
+  z-index:-100;
+}
+
+.balloon:after {
+ display:inline-block; top:153px; left: 60px;
+  position:absolute;
+  height:250px;
+  width:1px;
+  margin:0 auto;
+  content:"";
+  background:rgba(0,0,0,0.2); 
+}
+
+.balloon:nth-child(2){ background:hsl(245,40%,65%); animation-duration:3.5s; }
+.balloon:nth-child(2):before { color:hsl(245,40%,65%);  }
+
+.balloon:nth-child(3){ background:hsl(139,50%,60%); animation-duration:3s; }
+.balloon:nth-child(3):before { color:hsl(139,30%,50%);  }
+
+.balloon:nth-child(4){ background:hsl(59,50%,58%); animation-duration:4.5s; }
+.balloon:nth-child(4):before { color:hsl(59,30%,52%);  }
+
+.balloon:nth-child(5){ background:hsl(23,55%,57%); animation-duration:5s; }
+.balloon:nth-child(5):before { color:hsl(23,44%,46%);  }
+
+.balloon:nth-child(6){ background:hsl(125,35%,52%); animation-duration:5s; }
+.balloon:nth-child(6):before { color:hsl(140,50%,46%);  }
+
+.balloon:nth-child(7){ background:hsl(100,30%,17%); animation-duration:5s; }
+.balloon:nth-child(7):before { color:hsl(12,40%,60%);  }
+
+.balloon:nth-child(8){ background:hsl(112,10%,70%); animation-duration:5s; }
+.balloon:nth-child(8):before { color:hsl(42,10%,60%);  }
+
+.balloon:nth-child(9){ background:hsl(20,20%,20%); animation-duration:5s; }
+.balloon:nth-child(9):before { color:hsl(152,15%,60%);  }
+
+* {
+  box-sizing: border-box;
+}
+
+#myballoons {
+	min-height: 90vh;
+}
+
+* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: white;
+  top: 16%;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+</style>
+</head>
+<body>
+ 
+<p id="demo"></p>
+
+<div id="timelinepics">
+	<div class="timeline">
+  		<div class="container left">
+    			<div class="content">
+      				<img src="Image00.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+  		<div class="container right">
+    			<div class="content">
+      				<img src="Image001.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+		<div class="container left">
+    			<div class="content">
+      				<img src="Image002.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+		<div class="container right">
+    			<div class="content">
+      				<img src="Image003.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+		<div class="container left">
+    			<div class="content">
+      				<img src="Image004.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+		<div class="container right">
+    			<div class="content">
+      				<img src="Image005.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+		<div class="container left">
+    			<div class="content">
+      				<img src="Image006.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+		<div class="container right">
+    			<div class="content">
+      				<img src="Image007.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+		<div class="container left">
+    			<div class="content">
+      				<img src="Image008.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+		<div class="container right">
+    			<div class="content">
+      				<img src="Image009.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+		<div class="container left">
+    			<div class="content">
+      				<img src="Image10.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+		<div class="container right">
+    			<div class="content">
+      				<img src="Image11.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+		<div class="container left">
+    			<div class="content">
+      				<img src="Image12.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+		<div class="container right">
+    			<div class="content">
+      				<img src="Image13.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+		<div class="container left">
+    			<div class="content">
+      				<img src="Image14.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+		<div class="container right">
+    			<div class="content">
+      				<img src="Image15.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+		<div class="container left">
+    			<div class="content">
+      				<img src="Imag2.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+	
+		<div class="container right">
+    			<div class="content">
+      				<img src="Image16.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+	
+		<div class="container left">
+    			<div class="content">
+      				<img src="Image17.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+	
+		<div class="container right">
+    			<div class="content">
+      				<img src="Image18.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+
+		<div class="container left">
+    			<div class="content">
+      				<img src="Image19.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+	
+		<div class="container right">
+    			<div class="content">
+      				<img src="Image20.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+		<div class="container left">
+    			<div class="content">
+      				<img src="Image21.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+
+		<div class="container right">
+    			<div class="content">
+      				<img src="Image22.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+	
+		<div class="container left">
+    			<div class="content">
+      				<img src="Image23.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+
+		<div class="container right">
+    			<div class="content">
+      				<img src="Image24.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+	
+		<div class="container left">
+    			<div class="content">
+      				<img src="Image25.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+	
+		<div class="container right">
+    			<div class="content">
+      				<img src="Image26.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+
+		<div class="container left">
+    			<div class="content">
+      				<img src="Image27.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+	
+		<div class="container right">
+    			<div class="content">
+      				<img src="Image28.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+	
+		<div class="container left">
+    			<div class="content">
+      				<img src="Image29.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+	
+		<div class="container right">
+    			<div class="content">
+      				<img src="Image30.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+	
+	<div class="container left">
+    			<div class="content">
+      				<img src="Image31.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+	
+<div class="container right">
+    			<div class="content">
+      				<img src="Image32.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+	
+<div class="container left">
+    			<div class="content">
+      				<img src="Image33.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+	
+<div class="container right">
+    			<div class="content">
+      				<img src="Image34.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+	
+<div class="container left">
+    			<div class="content">
+      				<img src="Image35.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+	
+		<div class="container right">
+    			<div class="content">
+      				<img src="Image36.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+	
+		<div class="container left">
+    			<div class="content">
+      				<img src="Image37.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+	
+		<div class="container right">
+    			<div class="content">
+      				<img src="Image38.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+
+		<div class="container left">
+    			<div class="content">
+      				<img src="Image39.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+
+		<div class="container right">
+    			<div class="content">
+      				<img src="Image40.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+
+		<div class="container left">
+    			<div class="content">
+      				<img src="Image41.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+		<div class="container right">
+    			<div class="content">
+      				<img src="Image42.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+
+		<div class="container left">
+    			<div class="content">
+      				<img src="Image43.jpeg" alt="Preet" width="100%";>
+    			</div>
+  		</div>
+
+
+	</div>
+
+</div>
+
+<div class="row">
+   <div id="myballoons">	
+	<div class="column">
+		<img src="Image1.png" alt="Preet" width="650" height="900">
+	</div>
+
+	<div class="column">
+		<div class="cake">
+    			<div class="plate"></div>
+    			<div class="layer layer-bottom"></div>
+    			<div class="layer layer-middle"></div>
+    			<div class="layer layer-top"></div>
+    			<div class="icing"></div>
+    			<div class="drip drip1"></div>
+    			<div class="drip drip2"></div>
+    			<div class="drip drip3"></div>
+    			<div class="candle">
+    				<div class="flame"></div>
+    			</div>
+		</div>
+
+	</div>
+
+	<div class="column">
+		<div id="my" class="balloon"></div>
+		<div id="my" class="balloon"></div>
+		<div id="my" class="balloon"></div>
+		<div id="my" class="balloon"></div>
+		<div id="my" class="balloon"></div>
+		<div id="my" class="balloon"></div>
+		<div id="my" class="balloon"></div>
+		<div id="my" class="balloon"></div>
+		<div id="my" class="balloon"></div>
+	</div>
+   </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>  
+(function( $ ) {
+    var MAX_ROCKETS = 5,
+        MAX_PARTICLES = 500;
+
+    var FUNCTIONS = {
+        'init': function(element) {
+            var jqe = $(element);
+
+            // Check this element isn't already inited
+            if (jqe.data('fireworks_data') !== undefined) {
+                console.log('Looks like this element is already inited!');
+                return;
+            }
+
+            // Setup fireworks on this element
+            var canvas = document.createElement('canvas'),
+                canvas_buffer = document.createElement('canvas'),
+                data = {
+                    'element': element,
+                    'canvas': canvas,
+                    'context': canvas.getContext('2d'),
+                    'canvas_buffer': canvas_buffer,
+                    'context_buffer': canvas_buffer.getContext('2d'),
+                    'particles': [],
+                    'rockets': []
+                };
+
+            // Add & position the canvas
+            if (jqe.css('position') === 'static') {
+                element.style.position = 'relative';
+            }
+            element.appendChild(canvas);
+            canvas.style.position = 'absolute';
+            canvas.style.top = '0px';
+            canvas.style.bottom = '0px';
+            canvas.style.left = '0px';
+            canvas.style.right = '0px';
+
+            // Kickoff the loops
+            data.interval = setInterval(loop.bind(this, data), 1000 / 50);
+
+            // Save the data for later
+            jqe.data('fireworks_data', data);
+        }
+    };
+
+    $.fn.fireworks = function(action) {
+        // Assume no action means we want to init
+        if (!action) {
+            action = 'init';
+        }
+
+        // Process each element
+        this.each(function() {
+            FUNCTIONS[action](this);
+        });
+
+        // Chaining ftw :)
+        return this;
+    };
+
+    function launch(data) {
+        if (data.rockets.length < MAX_ROCKETS) {
+            var rocket = new Rocket(data);
+            data.rockets.push(rocket);
+        }
+    }
+
+    function loop(data) {
+        // Launch a new rocket
+        launch(data);
+
+        // Update screen size
+        if (data.canvas_width != data.element.offsetWidth) {
+            data.canvas_width = data.canvas.width = data.canvas_buffer.width = data.element.offsetWidth;
+        }
+        if (data.canvas_height != data.element.offsetHeight) {
+            data.canvas_height = data.canvas.height = data.canvas_buffer.height = data.element.offsetHeight;
+        }
+
+        // Fade the background out slowly
+        data.context_buffer.clearRect(0, 0, data.canvas.width, data.canvas.height);
+        data.context_buffer.globalAlpha = 0.9;
+        data.context_buffer.drawImage(data.canvas, 0, 0);
+        data.context.clearRect(0, 0, data.canvas.width, data.canvas.height);
+        data.context.drawImage(data.canvas_buffer, 0, 0);
+
+        // Update the rockets
+        var existingRockets = [];
+        data.rockets.forEach(function(rocket) {
+            // update and render
+            rocket.update();
+            rocket.render(data.context);
+
+            // random chance of 1% if rockets is above the middle
+            var randomChance = rocket.pos.y < (data.canvas.height * 2 / 3) ? (Math.random() * 100 <= 1) : false;
+
+            /* Explosion rules
+                 - 80% of screen
+                - going down
+                - close to the mouse
+                - 1% chance of random explosion
+            */
+            if (rocket.pos.y < data.canvas.height / 5 || rocket.vel.y >= 0 || randomChance) {
+                rocket.explode(data);
+            } else {
+                existingRockets.push(rocket);
+            }
+        });
+        data.rockets = existingRockets;
+
+        // Update the particles
+        var existingParticles = [];
+        data.particles.forEach(function(particle) {
+            particle.update();
+
+            // render and save particles that can be rendered
+            if (particle.exists()) {
+                particle.render(data.context);
+                existingParticles.push(particle);
+            }
+        });
+        data.particles = existingParticles;
+
+        while (data.particles.length > MAX_PARTICLES) {
+            data.particles.shift();
+        }
+    }
+
+    function Particle(pos) {
+        this.pos = {
+            x: pos ? pos.x : 0,
+            y: pos ? pos.y : 0
+        };
+        this.vel = {
+            x: 0,
+            y: 0
+        };
+        this.shrink = .97;
+        this.size = 2;
+
+        this.resistance = 1;
+        this.gravity = 0;
+
+        this.flick = false;
+
+        this.alpha = 1;
+        this.fade = 0;
+        this.color = 0;
+    }
+
+    Particle.prototype.update = function() {
+        // apply resistance
+        this.vel.x *= this.resistance;
+        this.vel.y *= this.resistance;
+
+        // gravity down
+        this.vel.y += this.gravity;
+
+        // update position based on speed
+        this.pos.x += this.vel.x;
+        this.pos.y += this.vel.y;
+
+        // shrink
+        this.size *= this.shrink;
+
+        // fade out
+        this.alpha -= this.fade;
+    };
+
+    Particle.prototype.render = function(c) {
+        if (!this.exists()) {
+            return;
+        }
+
+        c.save();
+
+        c.globalCompositeOperation = 'lighter';
+
+        var x = this.pos.x,
+            y = this.pos.y,
+            r = this.size / 2;
+
+        var gradient = c.createRadialGradient(x, y, 0.1, x, y, r);
+        gradient.addColorStop(0.1, "rgba(255,255,255," + this.alpha + ")");
+        gradient.addColorStop(0.8, "hsla(" + this.color + ", 100%, 50%, " + this.alpha + ")");
+        gradient.addColorStop(1, "hsla(" + this.color + ", 100%, 50%, 0.1)");
+
+        c.fillStyle = gradient;
+
+        c.beginPath();
+        c.arc(this.pos.x, this.pos.y, this.flick ? Math.random() * this.size : this.size, 0, Math.PI * 2, true);
+        c.closePath();
+        c.fill();
+
+        c.restore();
+    };
+
+    Particle.prototype.exists = function() {
+        return this.alpha >= 0.1 && this.size >= 1;
+    };
+
+    function Rocket(data) {
+        Particle.apply(
+            this,
+            [{
+                x: Math.random() * data.canvas.width * 2 / 3 + data.canvas.width / 6,
+                y: data.canvas.height
+            }]
+        );
+
+        this.explosionColor = Math.floor(Math.random() * 360 / 10) * 10;
+        this.vel.y = Math.random() * -3 - 4;
+        this.vel.x = Math.random() * 6 - 3;
+        this.size = 2;
+        this.shrink = 0.999;
+        this.gravity = 0.01;
+    }
+
+    Rocket.prototype = new Particle();
+    Rocket.prototype.constructor = Rocket;
+
+    Rocket.prototype.explode = function(data) {
+        var count = Math.random() * 10 + 80;
+
+        for (var i = 0; i < count; i++) {
+            var particle = new Particle(this.pos);
+            var angle = Math.random() * Math.PI * 2;
+
+            // emulate 3D effect by using cosine and put more particles in the middle
+            var speed = Math.cos(Math.random() * Math.PI / 2) * 15;
+
+            particle.vel.x = Math.cos(angle) * speed;
+            particle.vel.y = Math.sin(angle) * speed;
+
+            particle.size = 10;
+
+            particle.gravity = 0.2;
+            particle.resistance = 0.92;
+            particle.shrink = Math.random() * 0.05 + 0.93;
+
+            particle.flick = true;
+            particle.color = this.explosionColor;
+
+            data.particles.push(particle);
+        }
+    };
+
+    Rocket.prototype.render = function(c) {
+        if (!this.exists()) {
+            return;
+        }
+
+        c.save();
+
+        c.globalCompositeOperation = 'lighter';
+
+        var x = this.pos.x,
+            y = this.pos.y,
+            r = this.size / 2;
+
+        var gradient = c.createRadialGradient(x, y, 0.1, x, y, r);
+        gradient.addColorStop(0.1, "rgba(255, 255, 255 ," + this.alpha + ")");
+        gradient.addColorStop(0.2, "rgba(255, 180, 0, " + this.alpha + ")");
+
+        c.fillStyle = gradient;
+
+        c.beginPath();
+        c.arc(this.pos.x, this.pos.y, this.flick ? Math.random() * this.size / 2 + this.size / 2 : this.size, 0, Math.PI * 2, true);
+        c.closePath();
+        c.fill();
+
+        c.restore();
+    };
+}(jQuery));
+
+var divTwo = document.getElementById('myballoons');
+var divOne = document.getElementById('timelinepics');
+
+function hideDivision() {
+  divOne.style.display ='none';	
+}
+
+function hideDiv(){
+  divTwo.style.display ='none';
+}
+
+function showDiv(){
+  divTwo.style.display ='block';
+}
+ 
+// Set the date we're counting down to
+var countDownDate = new Date("Jun 8, 2020 00:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = "Birthday Timer: " + days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+  hideDiv();
+  
+ 
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    $("#myballoons").fireworks();
+    jQuery("#myballoons").before(jQuery("canvas"));
+
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "Happy Birthday Hathi";
+    hideDivision();
+    showDiv();
+			  
+}		
+}, 1000);
+</script>
+
+</body>
+</html>
