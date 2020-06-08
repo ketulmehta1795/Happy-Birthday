@@ -6,423 +6,541 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
 
-body {
-  background-color: #99ccff;
-}
+    body {
+      background-color: #99ccff;
+      height: 100%;
+    }
 
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
-}
+    .column {
+      float: left;
+      width: 33.33%;
+      padding: 10px;
+      height: 300px; /* Should be removed. Only for demonstration */
+    }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
 
-p {
+    p {
+      text-align: center;
+      font-size: 60px;
+      margin-top: 0px;
+    }
+
+     .cake {
+       position: absolute;
+       width: 250px;
+       height: 200px;
+       top: 50%;
+       left: 50%;
+       margin-top: -70px;
+       margin-left: -125px;
+    }
+     .plate {
+       width: 270px;
+       height: 110px;
+       position: absolute;
+       bottom: -10px;
+       left: -10px;
+       background-color: #ccc;
+       border-radius: 50%;
+       box-shadow: 0 2px 0 #b3b3b3, 0 4px 0 #b3b3b3, 0 5px 40px rgba(0, 0, 0, 0.5);
+    }
+     .cake > * {
+       position: absolute;
+    }
+     .layer {
+       position: absolute;
+       display: block;
+       width: 250px;
+       height: 100px;
+       border-radius: 50%;
+       background-color: #553c13;
+       box-shadow: 0 2px 0px #6a4b18, 0 4px 0px #33240b, 0 6px 0px #32230b, 0 8px 0px #31230b, 0 10px 0px #30220b, 0 12px 0px #2f220b, 0 14px 0px #2f210a, 0 16px 0px #2e200a, 0 18px 0px #2d200a, 0 20px 0px #2c1f0a, 0 22px 0px #2b1f0a, 0 24px 0px #2a1e09, 0 26px 0px #2a1d09, 0 28px 0px #291d09, 0 30px 0px #281c09;
+    }
+     .layer-top {
+       top: 0px;
+    }
+     .layer-middle {
+       top: 33px;
+    }
+     .layer-bottom {
+       top: 66px;
+    }
+     .icing {
+       top: 2px;
+       left: 5px;
+       background-color: #f0e4d0;
+       width: 240px;
+       height: 90px;
+       border-radius: 50%;
+    }
+     .icing:before {
+       content: "";
+       position: absolute;
+       top: 4px;
+       right: 5px;
+       bottom: 6px;
+       left: 5px;
+       background-color: #f4ebdc;
+       box-shadow: 0 0 4px #f6efe3, 0 0 4px #f6efe3, 0 0 4px #f6efe3;
+       border-radius: 50%;
+       z-index: 1;
+    }
+     .drip {
+       display: block;
+       width: 50px;
+       height: 60px;
+       border-bottom-left-radius: 25px;
+       border-bottom-right-radius: 25px;
+       background-color: #f0e4d0;
+    }
+     .drip1 {
+       top: 53px;
+       left: 5px;
+       transform: skewY(15deg);
+       height: 48px;
+       width: 40px;
+    }
+     .drip2 {
+       top: 69px;
+       left: 181px;
+       transform: skewY(-15deg);
+    }
+     .drip3 {
+       top: 54px;
+       left: 90px;
+       width: 80px;
+       border-bottom-left-radius: 40px;
+       border-bottom-right-radius: 40px;
+    }
+     .candle {
+       background-color: #7b020b;
+       width: 16px;
+       height: 50px;
+       border-radius: 8px / 4px;
+       top: -20px;
+       left: 50%;
+       margin-left: -8px;
+       z-index: 10;
+    }
+     .candle:before {
+       content: "";
+       position: absolute;
+       top: 0;
+       left: 0;
+       width: 16px;
+       height: 8px;
+       border-radius: 50%;
+       background-color: #ad030f;
+    }
+     .flame {
+       position: absolute;
+       background-color: orange;
+       width: 15px;
+       height: 35px;
+       border-radius: 10px 10px 10px 10px / 25px 25px 10px 10px;
+       top: -34px;
+       left: 50%;
+       margin-left: -7.5px;
+       z-index: 10;
+       box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.5), 0 0 80px rgba(255, 165, 0, 0.5);
+       transform-origin: 50% 90%;
+       animation: flicker 1s ease-in-out alternate infinite;
+    }
+     @keyframes flicker {
+       0% {
+         transform: skewX(5deg);
+         box-shadow: 0 0 10px rgba(255, 165, 0, 0.2), 0 0 20px rgba(255, 165, 0, 0.2), 0 0 60px rgba(255, 165, 0, 0.2), 0 0 80px rgba(255, 165, 0, 0.2);
+      }
+       25% {
+         transform: skewX(-5deg);
+         box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.5), 0 0 80px rgba(255, 165, 0, 0.5);
+      }
+       50% {
+         transform: skewX(10deg);
+         box-shadow: 0 0 10px rgba(255, 165, 0, 0.3), 0 0 20px rgba(255, 165, 0, 0.3), 0 0 60px rgba(255, 165, 0, 0.3), 0 0 80px rgba(255, 165, 0, 0.3);
+      }
+       75% {
+         transform: skewX(-10deg);
+         box-shadow: 0 0 10px rgba(255, 165, 0, 0.4), 0 0 20px rgba(255, 165, 0, 0.4), 0 0 60px rgba(255, 165, 0, 0.4), 0 0 80px rgba(255, 165, 0, 0.4);
+      }
+       100% {
+         transform: skewX(5deg);
+         box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.5), 0 0 80px rgba(255, 165, 0, 0.5);
+      }
+    }
+
+    .balloon {
+      display:inline-block;
+      width:120px;
+      height:145px;
+      background:hsl(215,50%,65%);
+      border-radius:80%;
+      position:relative;
+      box-shadow:inset -10px -10px 0 rgba(0,0,0,0.07);
+      margin:20px 30px;
+      transition:transform 0.5s ease;
+      z-index:10;
+      animation:balloons 4s ease-in-out infinite;
+      transform-origin:bottom center;
+    }
+
+    @keyframes balloons {
+      0%,100%{ transform:translateY(0) rotate(-4deg); }
+      50%{ transform:translateY(-25px) rotate(4deg); }
+    }
+
+
+    .balloon:before {
+      content:"▲";
+      font-size:20px;
+      color:hsl(215,30%,50%);
+      display:block;
+      text-align:center;
+      width:100%;
+      position:absolute;
+      bottom:-12px;
+      z-index:-100;
+    }
+
+    .balloon:after {
+     display:inline-block; top:153px; left: 60px;
+      position:absolute;
+      height:250px;
+      width:1px;
+      margin:0 auto;
+      content:"";
+      background:rgba(0,0,0,0.2); 
+    }
+
+    .balloon:nth-child(2){ background:hsl(245,40%,65%); animation-duration:3.5s; }
+    .balloon:nth-child(2):before { color:hsl(245,40%,65%);  }
+
+    .balloon:nth-child(3){ background:hsl(139,50%,60%); animation-duration:3s; }
+    .balloon:nth-child(3):before { color:hsl(139,30%,50%);  }
+
+    .balloon:nth-child(4){ background:hsl(59,50%,58%); animation-duration:4.5s; }
+    .balloon:nth-child(4):before { color:hsl(59,30%,52%);  }
+
+    .balloon:nth-child(5){ background:hsl(23,55%,57%); animation-duration:5s; }
+    .balloon:nth-child(5):before { color:hsl(23,44%,46%);  }
+
+    .balloon:nth-child(6){ background:hsl(125,35%,52%); animation-duration:5s; }
+    .balloon:nth-child(6):before { color:hsl(140,50%,46%);  }
+
+    .balloon:nth-child(7){ background:hsl(100,30%,17%); animation-duration:5s; }
+    .balloon:nth-child(7):before { color:hsl(12,40%,60%);  }
+
+    .balloon:nth-child(8){ background:hsl(112,10%,70%); animation-duration:5s; }
+    .balloon:nth-child(8):before { color:hsl(42,10%,60%);  }
+
+    .balloon:nth-child(9){ background:hsl(20,20%,20%); animation-duration:5s; }
+    .balloon:nth-child(9):before { color:hsl(152,15%,60%);  }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    #myballoons {
+      min-height: 90vh;
+    }
+
+
+    /* Container around content */
+    .container {
+      padding: 10px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+    }
+
+    /* The circles on the timeline */
+    .container::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -17px;
+      background-color: white;
+      border: 4px solid #FF9F55;
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    /* Place the container to the left */
+    .left {
+      left: 0;
+    }
+
+    /* Place the container to the right */
+    .right {
+      left: 50%;
+    }
+
+    /* Add arrows to the left container (pointing right) */
+    .left::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      right: 30px;
+      border: medium solid white;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent white;
+    }
+
+    /* Add arrows to the right container (pointing left) */
+    .right::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      left: 30px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+
+    /* Fix the circle for containers on the right side */
+    .right::after {
+      left: -16px;
+    }
+
+    /* The actual content */
+    .content {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+    }
+
+    .mySlides {display:none;}
+.button1 {
+  background-color: #4d4dff;
+  border: none;
+  color: white;
+  padding: 20px;
   text-align: center;
-  font-size: 60px;
-  margin-top: 0px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  
 }
 
- .cake {
-   position: absolute;
-   width: 250px;
-   height: 200px;
-   top: 50%;
-   left: 50%;
-   margin-top: -70px;
-   margin-left: -125px;
-}
- .plate {
-   width: 270px;
-   height: 110px;
-   position: absolute;
-   bottom: -10px;
-   left: -10px;
-   background-color: #ccc;
-   border-radius: 50%;
-   box-shadow: 0 2px 0 #b3b3b3, 0 4px 0 #b3b3b3, 0 5px 40px rgba(0, 0, 0, 0.5);
-}
- .cake > * {
-   position: absolute;
-}
- .layer {
-   position: absolute;
-   display: block;
-   width: 250px;
-   height: 100px;
-   border-radius: 50%;
-   background-color: #553c13;
-   box-shadow: 0 2px 0px #6a4b18, 0 4px 0px #33240b, 0 6px 0px #32230b, 0 8px 0px #31230b, 0 10px 0px #30220b, 0 12px 0px #2f220b, 0 14px 0px #2f210a, 0 16px 0px #2e200a, 0 18px 0px #2d200a, 0 20px 0px #2c1f0a, 0 22px 0px #2b1f0a, 0 24px 0px #2a1e09, 0 26px 0px #2a1d09, 0 28px 0px #291d09, 0 30px 0px #281c09;
-}
- .layer-top {
-   top: 0px;
-}
- .layer-middle {
-   top: 33px;
-}
- .layer-bottom {
-   top: 66px;
-}
- .icing {
-   top: 2px;
-   left: 5px;
-   background-color: #f0e4d0;
-   width: 240px;
-   height: 90px;
-   border-radius: 50%;
-}
- .icing:before {
-   content: "";
-   position: absolute;
-   top: 4px;
-   right: 5px;
-   bottom: 6px;
-   left: 5px;
-   background-color: #f4ebdc;
-   box-shadow: 0 0 4px #f6efe3, 0 0 4px #f6efe3, 0 0 4px #f6efe3;
-   border-radius: 50%;
-   z-index: 1;
-}
- .drip {
-   display: block;
-   width: 50px;
-   height: 60px;
-   border-bottom-left-radius: 25px;
-   border-bottom-right-radius: 25px;
-   background-color: #f0e4d0;
-}
- .drip1 {
-   top: 53px;
-   left: 5px;
-   transform: skewY(15deg);
-   height: 48px;
-   width: 40px;
-}
- .drip2 {
-   top: 69px;
-   left: 181px;
-   transform: skewY(-15deg);
-}
- .drip3 {
-   top: 54px;
-   left: 90px;
-   width: 80px;
-   border-bottom-left-radius: 40px;
-   border-bottom-right-radius: 40px;
-}
- .candle {
-   background-color: #7b020b;
-   width: 16px;
-   height: 50px;
-   border-radius: 8px / 4px;
-   top: -20px;
-   left: 50%;
-   margin-left: -8px;
-   z-index: 10;
-}
- .candle:before {
-   content: "";
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 16px;
-   height: 8px;
-   border-radius: 50%;
-   background-color: #ad030f;
-}
- .flame {
-   position: absolute;
-   background-color: orange;
-   width: 15px;
-   height: 35px;
-   border-radius: 10px 10px 10px 10px / 25px 25px 10px 10px;
-   top: -34px;
-   left: 50%;
-   margin-left: -7.5px;
-   z-index: 10;
-   box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.5), 0 0 80px rgba(255, 165, 0, 0.5);
-   transform-origin: 50% 90%;
-   animation: flicker 1s ease-in-out alternate infinite;
-}
- @keyframes flicker {
-   0% {
-     transform: skewX(5deg);
-     box-shadow: 0 0 10px rgba(255, 165, 0, 0.2), 0 0 20px rgba(255, 165, 0, 0.2), 0 0 60px rgba(255, 165, 0, 0.2), 0 0 80px rgba(255, 165, 0, 0.2);
-  }
-   25% {
-     transform: skewX(-5deg);
-     box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.5), 0 0 80px rgba(255, 165, 0, 0.5);
-  }
-   50% {
-     transform: skewX(10deg);
-     box-shadow: 0 0 10px rgba(255, 165, 0, 0.3), 0 0 20px rgba(255, 165, 0, 0.3), 0 0 60px rgba(255, 165, 0, 0.3), 0 0 80px rgba(255, 165, 0, 0.3);
-  }
-   75% {
-     transform: skewX(-10deg);
-     box-shadow: 0 0 10px rgba(255, 165, 0, 0.4), 0 0 20px rgba(255, 165, 0, 0.4), 0 0 60px rgba(255, 165, 0, 0.4), 0 0 80px rgba(255, 165, 0, 0.4);
-  }
-   100% {
-     transform: skewX(5deg);
-     box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.5), 0 0 80px rgba(255, 165, 0, 0.5);
-  }
+#mybutton {
+  text-align: center;
 }
 
-.balloon {
-  display:inline-block;
-  width:120px;
-  height:145px;
-  background:hsl(215,50%,65%);
-  border-radius:80%;
-  position:relative;
-  box-shadow:inset -10px -10px 0 rgba(0,0,0,0.07);
-  margin:20px 30px;
-  transition:transform 0.5s ease;
-  z-index:10;
-  animation:balloons 4s ease-in-out infinite;
-  transform-origin:bottom center;
-}
-
-@keyframes balloons {
-  0%,100%{ transform:translateY(0) rotate(-4deg); }
-  50%{ transform:translateY(-25px) rotate(4deg); }
-}
-
-
-.balloon:before {
-  content:"▲";
-  font-size:20px;
-  color:hsl(215,30%,50%);
-  display:block;
-  text-align:center;
-  width:100%;
-  position:absolute;
-  bottom:-12px;
-  z-index:-100;
-}
-
-.balloon:after {
- display:inline-block; top:153px; left: 60px;
-  position:absolute;
-  height:250px;
-  width:1px;
-  margin:0 auto;
-  content:"";
-  background:rgba(0,0,0,0.2); 
-}
-
-.balloon:nth-child(2){ background:hsl(245,40%,65%); animation-duration:3.5s; }
-.balloon:nth-child(2):before { color:hsl(245,40%,65%);  }
-
-.balloon:nth-child(3){ background:hsl(139,50%,60%); animation-duration:3s; }
-.balloon:nth-child(3):before { color:hsl(139,30%,50%);  }
-
-.balloon:nth-child(4){ background:hsl(59,50%,58%); animation-duration:4.5s; }
-.balloon:nth-child(4):before { color:hsl(59,30%,52%);  }
-
-.balloon:nth-child(5){ background:hsl(23,55%,57%); animation-duration:5s; }
-.balloon:nth-child(5):before { color:hsl(23,44%,46%);  }
-
-.balloon:nth-child(6){ background:hsl(125,35%,52%); animation-duration:5s; }
-.balloon:nth-child(6):before { color:hsl(140,50%,46%);  }
-
-.balloon:nth-child(7){ background:hsl(100,30%,17%); animation-duration:5s; }
-.balloon:nth-child(7):before { color:hsl(12,40%,60%);  }
-
-.balloon:nth-child(8){ background:hsl(112,10%,70%); animation-duration:5s; }
-.balloon:nth-child(8):before { color:hsl(42,10%,60%);  }
-
-.balloon:nth-child(9){ background:hsl(20,20%,20%); animation-duration:5s; }
-.balloon:nth-child(9):before { color:hsl(152,15%,60%);  }
-
-* {
-  box-sizing: border-box;
-}
-
-#myballoons {
-  min-height: 90vh;
-}
-
-
-/* Container around content */
-.container {
-  padding: 10px 40px;
+.container1 { 
+  height: 50px;
   position: relative;
-  background-color: inherit;
-  width: 50%;
 }
 
-/* The circles on the timeline */
-.container::after {
-  content: '';
+.center1 {
+  margin: 0;
   position: absolute;
-  width: 25px;
-  height: 25px;
-  right: -17px;
-  background-color: white;
-  border: 4px solid #FF9F55;
-  top: 15px;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-/* Place the container to the left */
-.left {
-  left: 0;
-}
-
-/* Place the container to the right */
-.right {
+  top: 50%;
   left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
-
-/* Add arrows to the left container (pointing right) */
-.left::before {
-  content: " ";
-  height: 0;
-  position: absolute;
-  top: 22px;
-  width: 0;
-  z-index: 1;
-  right: 30px;
-  border: medium solid white;
-  border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent white;
-}
-
-/* Add arrows to the right container (pointing left) */
-.right::before {
-  content: " ";
-  height: 0;
-  position: absolute;
-  top: 22px;
-  width: 0;
-  z-index: 1;
-  left: 30px;
-  border: medium solid white;
-  border-width: 10px 10px 10px 0;
-  border-color: transparent white transparent transparent;
-}
-
-/* Fix the circle for containers on the right side */
-.right::after {
-  left: -16px;
-}
-
-/* The actual content */
-.content {
-  padding: 20px 30px;
-  background-color: white;
-  position: relative;
-  border-radius: 6px;
-}
-
-.mySlides {display:none;}
 
 </style>
 </head>
 <body>
  
-<p id="demo"></p>
-
-<iframe id="start" width="0" height="0" src="https://www.youtube.com/embed/JtaGI_HW4jQ?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<iframe id="wish" width="0" height="0" src="https://www.youtube.com/embed/_z-1fTlSDF0&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<div id="timelinepics" class="timeline" style="max-width: 100%;">
-    <div class="w3-content">
-            <img class="mySlides" src="Image00.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image001.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image002.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image003.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image004.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image005.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image006.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image007.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image008.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image009.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image10.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image11.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image12.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image13.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image14.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image15.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image16.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image17.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image18.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image19.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image20.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image21.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image22.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image23.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image24.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image25.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image26.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image27.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image28.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image29.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image30.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image31.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image32.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image33.jpeg" alt="Preet" width="100%";>
-            <img class="mySlides" src="Image34.jpeg" alt="Preet" width="100%";> 
-            <img class="mySlides" src="Image35.jpeg" alt="Preet" width="100%";> 
-            <img class="mySlides" src="Image36.jpeg" alt="Preet" width="100%";> 
-            <img class="mySlides" src="Image37.jpeg" alt="Preet" width="100%";> 
-            <img class="mySlides" src="Image38.jpeg" alt="Preet" width="100%";> 
-            <img class="mySlides" src="Image39.jpeg" alt="Preet" width="100%";> 
-            <img class="mySlides" src="Image40.jpeg" alt="Preet" width="100%";> 
-            <img class="mySlides" src="Image41.jpeg" alt="Preet" width="100%";> 
-            <img class="mySlides" src="Image42.jpeg" alt="Preet" width="100%";> 
-            <img class="mySlides" src="Image43.jpeg" alt="Preet" width="100%";> 
-    </div>
+    <p id="demo"></p>
+<div id="backgroundImage" class="bg">
+	<img src="Group.jpeg" alt="Family" width="100%;height:100%;"></img>
 </div>
 
-<div class="row">
-   <div id="myballoons">  
-  <div class="column">
-    <img src="Image1.png" alt="Preet" width="650" height="900">
-  </div>
+<div id="mytest" class="container1">
+	<div class="center1">
+    		<button class="button1" onclick="myFunction()">Let's Celebrate🎈🎊</button><button class="button1" onclick="myFunction2()">Video Memories🎥</button>
+	</div>
+</div>
 
-  <div class="column">
-    <div class="cake">
-          <div class="plate"></div>
-          <div class="layer layer-bottom"></div>
-          <div class="layer layer-middle"></div>
-          <div class="layer layer-top"></div>
-          <div class="icing"></div>
-          <div class="drip drip1"></div>
-          <div class="drip drip2"></div>
-          <div class="drip drip3"></div>
-          <div class="candle">
-            <div class="flame"></div>
+<audio id="start" autoplay loop>
+  <source src="Audio.mpeg" type="audio/mpeg">
+</audio>
+
+<iframe id="wish" width="0" height="0" src="https://www.youtube.com/embed/_z-1fTlSDF0&mute=1" frameborder="0" allowfullscreen></iframe>
+
+<iframe id="last" width="0" height="0" src="https://www.youtube.com/embed/Ca6dPcHgdFY?start=22&autoplay=1&mute=1" frameborder="0"></iframe>
+
+    <div id="timelinepics" class="timeline" style="max-width: 100%;">
+        <div class="w3-content">
+		<img class="mySlides" src="Kush15.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image00.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush128.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush129.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image001.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image002.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush1.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image003.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image004.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush117.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush122.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image005.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image006.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush2.jpeg" alt="Preet" width="100%";>                
+		<img class="mySlides" src="Image007.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image008.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush3.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image009.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image10.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image11.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush4.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image12.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image13.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush5.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image14.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image15.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image16.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush131.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image17.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image18.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image19.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush8.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image20.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image21.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image22.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush24.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush25.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush26.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush27.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image23.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image24.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image25.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image26.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush6.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image27.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush7.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image28.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image29.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image30.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush14.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image31.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image32.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image33.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image34.jpeg" alt="Preet" width="100%";> 
+		<img class="mySlides" src="Kush9.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image35.jpeg" alt="Preet" width="100%";> 
+                <img class="mySlides" src="Image36.jpeg" alt="Preet" width="100%";> 
+		<img class="mySlides" src="Kush10.jpeg" alt="Preet" width="100%";>
+                <img class="mySlides" src="Image37.jpeg" alt="Preet" width="100%";> 
+                <img class="mySlides" src="Image38.jpeg" alt="Preet" width="100%";> 
+                <img class="mySlides" src="Image39.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush11.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush12.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush13.jpeg" alt="Preet" width="100%";> 
+                <img class="mySlides" src="Image40.jpeg" alt="Preet" width="100%";> 
+                <img class="mySlides" src="Image41.jpeg" alt="Preet" width="100%";> 
+                <img class="mySlides" src="Image42.jpeg" alt="Preet" width="100%";> 
+                <img class="mySlides" src="Image43.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush16.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush17.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush18.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush19.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush20.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Image44.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Image45.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush21.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Image46.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Image47.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Image48.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Image49.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Image50.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush22.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush23.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Image51.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush28.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush29.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush30.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush32.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Image52.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Image53.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush33.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Image54.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Image55.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Image56.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush34.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Image57.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Image58.jpeg" alt="Preet" width="100%";> 
+		<img class="mySlides" src="Image59.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush35.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush36.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Image60.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Image61.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Image62.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush37.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Image63.jpeg" alt="Preet" width="100%";>
+		<img class="mySlides" src="Kush38.jpeg" alt="Preet" width="100%";>
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="myballoons"> 
+	   
+          <div class="column">
+            <img src="Image1.png" alt="Preet" width="100%" height="900">
           </div>
+
+          <div class="column">
+            <div class="cake">
+                <div class="plate"></div>
+                <div class="layer layer-bottom"></div>
+                <div class="layer layer-middle"></div>
+                <div class="layer layer-top"></div>
+                <div class="icing"></div>
+                <div class="drip drip1"></div>
+                <div class="drip drip2"></div>
+                <div class="drip drip3"></div>
+                <div class="candle">
+                  <div class="flame"></div>
+                </div>
+            </div>
+          </div>
+
+          <div class="column">
+            <div id="my" class="balloon"></div>
+            <div id="my" class="balloon"></div>
+            <div id="my" class="balloon"></div>
+            <div id="my" class="balloon"></div>
+            <div id="my" class="balloon"></div>
+            <div id="my" class="balloon"></div>
+            <div id="my" class="balloon"></div>
+            <div id="my" class="balloon"></div>
+            <div id="my" class="balloon"></div>
+          </div>
+        </div>
     </div>
-
-  </div>
-
-  <div class="column">
-    <div id="my" class="balloon"></div>
-    <div id="my" class="balloon"></div>
-    <div id="my" class="balloon"></div>
-    <div id="my" class="balloon"></div>
-    <div id="my" class="balloon"></div>
-    <div id="my" class="balloon"></div>
-    <div id="my" class="balloon"></div>
-    <div id="my" class="balloon"></div>
-    <div id="my" class="balloon"></div>
-  </div>
-   </div>
-</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script>  
+<script> 
+function myFunction() {
+  divThree.muted=true;
+  window.open("demo.html");
+}
+ 
+function myFunction2() {
+  divThree.muted=true;
+  window.open("ballons.htm");
+}
+
 (function( $ ) {
     var MAX_ROCKETS = 5,
         MAX_PARTICLES = 500;
@@ -699,74 +817,83 @@ p {
     };
 }(jQuery));
 
-var slideIndex = 0;
-carousel();
+  var slideIndex = 0;
+  carousel();
 
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none"; 
-  }
-  slideIndex++;
-  if (slideIndex > x.length) {slideIndex = 1} 
-  x[slideIndex-1].style.display = "block"; 
-  setTimeout(carousel, 3000); 
+  function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none"; 
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1} 
+    x[slideIndex-1].style.display = "block"; 
+    setTimeout(carousel, 3000); 
 }
 
-var divTwo = document.getElementById('myballoons');
-var divOne = document.getElementById('timelinepics');
-var divThree = document.getElementById('start');
-var divFour = document.getElementById('wish');
+  var divTwo = document.getElementById('myballoons');
+  var divOne = document.getElementById('timelinepics');
+  var divThree = document.getElementById('start');
+  var divFour = document.getElementById('wish'); 
+  var divFive = document.getElementById('mytest');
+  var divSix = document.getElementById('backgroundImage');
+  var divSeven = document.getElementById('last');
 
 function hideDivision() {
-  divOne.style.display ='none'; 
+  divOne.style.display ='none';
+  divFive.style.display = 'none';
+  $("#backgroundImage").hide();
 }
 
 function hideDiv(){
   divTwo.style.display ='none';
+  $("#backgroundImage").hide();
 }
 
 function showDiv(){
   divTwo.style.display ='block';
+  $("#backgroundImage").hide();
 }
- 
-// Set the date we're counting down to
-var countDownDate = new Date("Jun 7, 2020 15:37:30").getTime();
 
-// Update the count down every 1 second
-var x = setInterval(function() {
+function myfun(){
+  divFour.setAttribute("src","https://www.youtube.com/embed/_z-1fTlSDF0?mute=1");
+  divSeven.setAttribute("src","https://www.youtube.com/embed/Ca6dPcHgdFY?start=22&autoplay=1&mute=0");
+  document.getElementById("demo").innerHTML = "Family❤"
+  $("#backgroundImage").show();
+  $("#myballoons").hide();
 
-  // Get today's date and time
+}
+
+  var countDownDate = new Date("Jun 8, 2020 00:00:00").getTime();
+  
+  var x = setInterval(function() {
+
   var now = new Date().getTime();
     
-  // Find the distance between now and the count down date
   var distance = countDownDate - now;
-    
-  // Time calculations for days, hours, minutes and seconds
+   
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
-  // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML = "Birthday Timer: " + days + "d " + hours + "h "
+  document.getElementById("demo").innerHTML = "Birthday Timer⌚" + days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
   hideDiv();
   
-  // If the count down is over, write some text 
-  if (distance < 0) {
-divThree.setAttribute("src","https://www.youtube.com/embed/JtaGI_HW4jQ?mute=1");
+  if (distance <= 0) {
+    divThree.muted=true;
     divFour.setAttribute("src","https://www.youtube.com/embed/_z-1fTlSDF0?start=14&autoplay=1&mute=0");  
     $("#myballoons").fireworks();
     jQuery("#myballoons").before(jQuery("canvas"));
 
     clearInterval(x);
-    document.getElementById("demo").innerHTML = "Happy Birthday Hathi";
+    document.getElementById("demo").innerHTML = "Happy Birthday Paisadar 🎉🎊";
     hideDivision();
     showDiv(); 
-        
-}   
+	setTimeout(myfun, 10000)
+    }   
 }, 1000);
 </script>
 
